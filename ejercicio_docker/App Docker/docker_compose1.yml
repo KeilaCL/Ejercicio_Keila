@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  nodehello:
+    environment:
+      - NODE_ENV=development
+    build:
+      context: ./
+      dockerfile: dockerfile
+    container_name: nodehello
+    volumes:
+      - ./:/Ingeniería de Software/ejercicio_docker/App Docker
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    command: /bin/sh -c 'npm install && npm run debug'
+
+    version: '3'

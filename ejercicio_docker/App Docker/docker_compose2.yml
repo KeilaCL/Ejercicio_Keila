@@ -1,0 +1,13 @@
+services:
+
+  nodehello:
+    environment:
+      - NODE_ENV=development
+    image: educative1/nodehello:dev
+    container_name: nodehello
+    volumes:
+      - C:\Users\kncor\OneDrive\Escritorio\Segundo Ciclo 2022\Ingenieria de Software I\ejercicio_docker\App Docker
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    command: /bin/sh -c 'npm install && npm run debug'
